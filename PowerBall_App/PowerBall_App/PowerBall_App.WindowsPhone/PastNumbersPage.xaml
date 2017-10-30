@@ -1,0 +1,21 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PowerBall_App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+    x:Class="PowerBall_App.PastNumbersPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_PastNUmbers_Phone" Grid.Row="0" HorizontalAlignment="Center" Height="50" Id="AdMediator-Id-3E4B4A20-BBD6-479B-B1A0-9CD5DD85A12B" Margin="0" VerticalAlignment="Top" Width="320"/>
+        <WebView x:Name="web" DefaultBackgroundColor="#FF131212" RequestedTheme="Dark" Grid.Row="1"/>
+    </Grid>
+</Page>

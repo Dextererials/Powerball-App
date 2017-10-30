@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="PowerBall_App.ViewPastNumbers"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PowerBall_App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:adduplex="using:AdDuplex.Universal.Controls.Win.XAML"
+    xmlns:Windows81="using:Microsoft.AdMediator.Windows81"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+				Style="{StaticResource NavigationBackButtonNormalStyle}"
+				VerticalAlignment="Top"
+				AutomationProperties.Name="Back"
+				AutomationProperties.AutomationId="BackButton"
+				AutomationProperties.ItemType="Navigation Button" Click="go_Back_Clicked"/>
+            <adduplex:AdControl Grid.Column="1" AdUnitId="184303" AppKey="aaa36954-bbce-44eb-894d-1b61afd7a3db" Size="500x130"/>
+            <adduplex:AdControl Grid.Column="2" AdUnitId="184307" AppKey="aaa36954-bbce-44eb-894d-1b61afd7a3db" Size="500x130"/>
+        </Grid>
+        <Windows81:AdMediatorControl x:Name="pastNumber_Desktop_sAd" Grid.Column="1" HorizontalAlignment="Left" Id="aa" Height="600" Margin="0" Grid.Row="1" VerticalAlignment="Top" Width="160"/>
+        <WebView Name="web" Grid.Row="1" DefaultBackgroundColor="#FF131212" RequestedTheme="Dark" RenderTransformOrigin="0.5,0.5"/>
+
+    </Grid>
+</Page>
